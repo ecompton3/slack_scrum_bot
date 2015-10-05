@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(bodyParser.json());
-var router = require('./router');
+var router = require('./router')();
 app.use(router);
 var j = schedule.scheduleJob('00 15 * * 1-5', function(){
     var responseText = "Standup Time! The call in code is 39569029. If the call is cancelled or you cannot make the call please post the following: \n " +
