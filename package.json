@@ -2,6 +2,7 @@
   "name": "Slack.Scrum.Bot",
   "version": "0.0.1",
   "description": "Simple Scrum Bot for Slack",
+  "contributors" : ["Evan Compton <ecomton3@gmail.com>","Tanner Preiss"],
   "scripts": {
     "start": "forever start app.js",
     "dev-start": "nodemon app.js"
@@ -26,12 +27,12 @@
     "type": "git",
     "url": "https://github.com/ecompton3/slack_scrum_bot.git"
   },
-  "license" : "Apache2",
+  "license" : "Apache-2.0",
   "devDependencies": {
     "forever": "^0.15.1",
     "nodemon": "^1.4.1"
   },
   "engines": {
-    "node": "^4.1.0"
+    "node": ">=0.12"
   }
 }
