@@ -4,7 +4,7 @@
   "description": "Simple Scrum Bot for Slack",
   "contributors" : ["Evan Compton <ecomton3@gmail.com>","Tanner Preiss"],
   "scripts": {
-    "start": "forever start app.js",
+    "start": "node --harmony app.js",
     "dev-start": "nodemon app.js"
   },
   "dependencies": {
@@ -29,10 +29,9 @@
   },
   "license" : "Apache-2.0",
   "devDependencies": {
-    "forever": "^0.15.1",
     "nodemon": "^1.4.1"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=0.12.0"
   }
 }

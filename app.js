@@ -8,7 +8,8 @@ var express = require("express"),
   // Create the application.
 var app = express();
 // all environments
-app.set("port", 3000);
+var port = (process.env.VCAP_APP_PORT || 3000)
+app.set("port", port);
 app.use(bodyParser.urlencoded({
   extended: true
 }));

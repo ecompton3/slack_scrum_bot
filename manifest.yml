@@ -1,0 +1,8 @@
+applications:
+- disk_quota: 1024M
+  host: slack-scrum-bot
+  name: Slack Scrum Bot
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
+  buildpack: https://github.com/heroku/heroku-buildpack-nodejs.git
