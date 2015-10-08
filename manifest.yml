@@ -1,5 +1,11 @@
+declared-services: 
+  scrum-cloudant-cloudantNoSQLDB: 
+    label: cloudantNoSQLDB 
+    plan: Shared 
 applications:
-- disk_quota: 1024M
+- services:
+  - scrum-cloudant-cloudantNoSQLDB
+  disk_quota: 1024M
   host: slack-scrum-bot
   name: Slack Scrum Bot
   domain: mybluemix.net
