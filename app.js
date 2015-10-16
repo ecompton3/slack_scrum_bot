@@ -1,28 +1,29 @@
-var schedule = require('node-schedule');
-var express = require("express"),
+let schedule = require('node-schedule');
+let express = require("express"),
   http = require("http"),
   path = require("path"),
   bodyParser = require("body-parser"),
   serveStatic = require("serve-static"),
-  cookieParser = require("cookie-parser");
+  cookieParser = require("cookie-parser"),
+  slackConfig = require("config/slack-config.json");
   // Create the application.
-var app = express();
+let app = express();
 // all environments
-var port = (process.env.VCAP_APP_PORT || 3000)
+let port = (process.env.VCAP_APP_PORT || 3000)
 app.set("port", port);
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
 app.use(bodyParser.json());
-var router = require('./router')();
+let router = require('./router')();
 app.use(router);
-var j = schedule.scheduleJob('00 15 * * 1-5', function(){
-    var responseText = "Standup Time! The call in code is 39569029. If the call is cancelled or you cannot make the call please post the following: \n " +
+let j = schedule.scheduleJob('00 15 * * 1-5', function(){
+    let responseText = "Standup Time! The call in code is 39569029. If the call is cancelled or you cannot make the call please post the following: \n " +
     "What you did yesterday, What you are going to do today, and any blockers you may have";
    
-   var slackOptions = {
-                url: "https://hooks.slack.com/services/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",
+   let slackOptions = {
+                url: slackConfig.slack_url,
                 method: "POST",
                 json: true,
                 body: {
