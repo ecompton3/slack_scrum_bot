@@ -1,0 +1,4 @@
+{
+	"slack_url":"your_slack_incoming_webhook_url",
+	"slack_tokens": ["your","slash command","tokens"]
+}
