@@ -1,3 +1,4 @@
+"use strict";
 let schedule = require('node-schedule');
 let express = require("express"),
   http = require("http"),
@@ -5,11 +6,14 @@ let express = require("express"),
   bodyParser = require("body-parser"),
   serveStatic = require("serve-static"),
   cookieParser = require("cookie-parser"),
-  slackConfig = require("config/slack-config.json");
+  slackConfig = require("./config/slack-config.json"),
+  cfenv = require('cfenv'),
+  request = require('request');;
+  let appEnv = cfenv.getAppEnv();
   // Create the application.
 let app = express();
 // all environments
-let port = (process.env.VCAP_APP_PORT || 3000)
+let port = (appEnv.port || 3000)
 app.set("port", port);
 app.use(bodyParser.urlencoded({
   extended: true
