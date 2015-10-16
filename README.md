@@ -3,6 +3,12 @@ A simple bot for Slack that sends messages at specfic times. Useful for Scrum Te
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ecompton3/slack_scrum_bot)
 
+To develop and run the project:
+
+1. `git clone`
+2. `npm install`
+3. `npm start` This will start the server running on localhost:3000
+
 ####Current Scrum Bot
 Current scrum bot is a cron job running on Bluemix which posts to a designated slack channel with a specific quote at a designated time. We have two messages that are being sent
 
