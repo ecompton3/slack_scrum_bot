@@ -1,5 +1,5 @@
 "use strict"
-let cloudant = require('../config/cloudant_config');
+let cloudant = require('../config/cloudant-config');
 var scrum_db = cloudant.use('scrum_db');
 
 

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Create reminder</h2>
+<form action="/app/summary" method="post">
+    <label for="channel">Channel</label>
+	<input name="team" type="text" placeholder="Team">
+	<input name="slackType" type="radio" value="#"> Channel
+	<input name="slackType" type="radio" value=""> Private Group
+	<label for="dialInNumber">What's conference Number?</label>
+	<input name="dialInNumber" type="tel">
+	<label for="dialInCode">What's the dial in code?</label>
+	<input name="dialInCode" type="number" min="0">
+	<label for="time">What time?</label>
+	<input name="time" type="time">
+	<label for="timezone">What timezone?</label>
+	<select name="timezone">
+		<option value="America/New_York">Eastern</option>
+		<option value="America/Chicago">Central</option>
+		<option value="America/Denver">Mountain</option>
+		<option value="America/Los_Angeles">Western</option>
+	</select>
+	<label for="startDate">Start Date?</label>
+	<input name="startDate" type="date">
+	<label for="endDate">End Date?</label>
+	<input name="endDate" type="date">
+	<button type="submit">Submit</button>
+</form>
+{% endblock %}
